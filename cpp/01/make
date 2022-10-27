@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ -Wall -Werror -Wextra *.cpp
+g++ -std=c++98 -Wall -Werror -Wextra *.cpp

@@ -31,3 +31,25 @@ void	Warlock::introduce() const
 {
 	std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
 }
+
+void	Warlock::learnSpell(ASpell *spell)
+{
+	_spells.insert(std::pair<std::string, ASpell *>(spell->getName(), spell));
+}
+
+void	Warlock::forgetSpell(std::string const &spellName)
+{
+	_spells.erase(spellName);
+}
+
+void	Warlock::launchSpell(std::string const &spellName, ATarget const &target) const
+{
+	try
+	{
+		_spells.at(spellName)->launch(target);
+	}
+	catch(const std::exception& e)
+	{
+		(void)e;
+	}
+}
