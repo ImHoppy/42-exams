@@ -34,22 +34,19 @@ void	Warlock::introduce() const
 
 void	Warlock::learnSpell(ASpell *spell)
 {
-	_spells.insert(std::pair<std::string, ASpell *>(spell->getName(), spell));
+	_spellBook.learnSpell(spell);
 }
 
 void	Warlock::forgetSpell(std::string const &spellName)
 {
-	_spells.erase(spellName);
+	_spellBook.forgetSpell(spellName);
 }
 
 void	Warlock::launchSpell(std::string const &spellName, ATarget const &target) const
 {
-	try
-	{
-		_spells.at(spellName)->launch(target);
-	}
-	catch(const std::exception& e)
-	{
-		(void)e;
-	}
+	ASpell *spell = _spellBook.createSpell(spellName);
+	if (spell == NULL)
+		return;
+	spell->launch(target);
+	delete spell;
 }

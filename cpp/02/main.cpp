@@ -2,6 +2,7 @@
 #include "BrickWall.hpp"
 #include "Polymorph.hpp"
 #include "TargetGenerator.hpp"
+#include "Fireball.hpp"
 
 int main()
 {

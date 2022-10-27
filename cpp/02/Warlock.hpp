@@ -1,6 +1,7 @@
 #pragma once
-#include <string>
 #include "ASpell.hpp"
+#include "SpellBook.hpp"
+#include <string>
 #include <map>
 
 class Warlock
@@ -8,7 +9,7 @@ class Warlock
 	private:
 		std::string			_name;
 		std::string			_title;
-		std::map<std::string, ASpell *>	_spells;
+		SpellBook			_spellBook;
 	public:
 		//Warlock();
 		Warlock(std::string const &name, std::string const &title);
