@@ -1,0 +1,2 @@
+#!/bin/bash
+cc microshell.c -o microshell -g3 -Wall -Wextra -Werror
